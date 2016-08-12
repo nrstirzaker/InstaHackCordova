@@ -1,8 +1,8 @@
 //module.exports = function () {
-console.log('func called');
+$('#textarea').val('func called');
 $(document).on('pageinit', function () {
-  console.log('doc ready');
-  $('.media-body').click(function () {
+  $('#textarea').val('doc ready');
+  $('.ui-btn').click(function () {
     capturePhoto();
   });
 })
@@ -15,11 +15,11 @@ function onPhotoDataSuccess(theImagesFileURI) {
 }
 
 function onFail(message) {
-  alert('Failed because: ' + message);
+  $('#textarea').val(message);
 }
 
 function capturePhoto() {
-
+  $('#textarea').val('capture Photo');
   // Take picture using device camera and retrieve image as base64-encoded string
 
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
