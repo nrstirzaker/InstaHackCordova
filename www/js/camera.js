@@ -7,13 +7,23 @@ $(document).on('pageinit', function () {
   });
 })
 
-function onPhotoDataSuccess(theImagesFileURI) {
-  $('#textarea').val('onPhotoDataSuccess');
-  $('#textarea').val(theImagesFileURI);
-  $("#image").attr("src", theImagesFileURI);
-  $("#image").css("display", 'block');
 
+function onPhotoDataSuccess(imageData) {
+  $('#textarea').val('onPhotoDataSuccess');
+  
+  
+  var image = "data:image/jpeg;base64," + imageData;
+  $("#image").attr("src", image);
 }
+
+// function onPhotoDataSuccess(theImagesFileURI) {
+
+//   $('#textarea').val('onPhotoDataSuccess');
+//   $('#textarea').val(theImagesFileURI);
+//   $("#image").attr("src", theImagesFileURI);
+//   $("#image").css("display", 'block');
+
+// }
 
 function onFail(message) {
   $('#textarea').val(message);
@@ -25,7 +35,7 @@ function capturePhoto() {
 
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
     quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
+    destinationType: Camera.DestinationType.DATA_URL,
     sourceType: Camera.PictureSourceType.CAMERA
   });
 
