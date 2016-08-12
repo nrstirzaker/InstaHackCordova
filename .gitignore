@@ -1,0 +1,7 @@
+node_modules/*
+.history/*
+hooks/*
+platforms/*
+plugins/*
+www/css/images/*
+www/img/*
