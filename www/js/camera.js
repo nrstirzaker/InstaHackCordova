@@ -36,7 +36,7 @@ function capturePhoto() {
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
     quality: 50,
     destinationType: Camera.DestinationType.DATA_URL,
-    sourceType: Camera.PictureSourceType.CAMERA
+    sourceType : 1
   });
 
 }
