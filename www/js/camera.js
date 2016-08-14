@@ -8,9 +8,9 @@ winston.add(winston.transports.File, {
 
 
 //module.exports = function () {
-$('#textarea').val('func called');
+winston.log('func called');
 $(document).on('pageinit', function () {
-  $('#textarea').val('doc ready');
+  winston.log('doc ready');
   $('.ui-btn').click(function () {
     capturePhoto();
   });
@@ -18,7 +18,7 @@ $(document).on('pageinit', function () {
 
 
 function onPhotoDataSuccess(imageData) {
-  $('#textarea').val('onPhotoDataSuccess');
+  winston.log('onPhotoDataSuccess');
 
 
   var image = "data:image/jpeg;base64," + imageData;
@@ -35,11 +35,11 @@ function onPhotoDataSuccess(imageData) {
 // }
 
 function onFail(message) {
-  $('#textarea').val(message);
+  winston.log(message);
 }
 
 function capturePhoto() {
-  $('#textarea').val('capturePhoto');
+  winston.log('capturePhoto');
   // Take picture using device camera and retrieve image as base64-encoded string
 
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
