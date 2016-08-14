@@ -1,3 +1,12 @@
+var winston = require('winston');
+winston.add(winston.transports.File, {
+  filename: '/log/instahack.log',
+  handleExceptions: true,
+  humanReadableUnhandledException: true
+});
+
+
+
 //module.exports = function () {
 $('#textarea').val('func called');
 $(document).on('pageinit', function () {
@@ -10,8 +19,8 @@ $(document).on('pageinit', function () {
 
 function onPhotoDataSuccess(imageData) {
   $('#textarea').val('onPhotoDataSuccess');
-  
-  
+
+
   var image = "data:image/jpeg;base64," + imageData;
   $("#image").attr("src", image);
 }
@@ -36,7 +45,7 @@ function capturePhoto() {
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
     quality: 50,
     destinationType: Camera.DestinationType.DATA_URL,
-    sourceType : 1
+    sourceType: 1
   });
 
 }
