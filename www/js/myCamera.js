@@ -25,7 +25,7 @@ function onPhotoDataSuccess(imageData) {
 
 
   var image = "data:image/jpeg;base64," + imageData;
-  $("#image").attr("src", image);
+  $("#largeImage").attr("src", image);
 }
 
 // function onPhotoDataSuccess(theImagesFileURI) {
