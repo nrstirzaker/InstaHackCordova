@@ -4,6 +4,7 @@
 
 //module.exports = function () {
 $('#textarea').val('func called');
+
 $(document).on('pageinit', function () {
   $('#textarea').val('doc ready');
   $('.ui-btn').click(function () {
@@ -15,6 +16,7 @@ $(document).on('pageinit', function () {
 
       capturePhoto();
     };
+  });
 })
 
 
@@ -59,5 +61,5 @@ function capturePhoto() {
 
 
 
-//} ()
+
 
