@@ -7,8 +7,12 @@ $('#textarea').val('func called');
 $(document).on('pageinit', function () {
   $('#textarea').val('doc ready');
   $('.ui-btn').click(function () {
-    capturePhoto();
-  });
+    function onDeviceReady() {
+      pictureSource = navigator.camera.PictureSourceType;
+      destinationType = navigator.camera.DestinationType;
+
+      capturePhoto();
+    });
 })
 
 
