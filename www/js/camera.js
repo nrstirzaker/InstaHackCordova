@@ -39,7 +39,7 @@ function capturePhoto() {
 
 
 
-  $('#textarea').val(navigator);
+  $('#textarea').val(navigator.camera);
   navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
     quality: 50,
     destinationType: Camera.DestinationType.DATA_URL,
